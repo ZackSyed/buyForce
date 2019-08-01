@@ -8,9 +8,9 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
-import Login from '../users/log_in';
-import Signup from '../users/sign_up';
-import Demo from '../users/demo_log_in';
+import Login from './log_in';
+import Signup from './sign_up';
+
 
 const styles = theme => ({
   hidden: {
@@ -44,7 +44,7 @@ class SplashList extends React.Component {
         this.state = {
           checked: '',
         };
-        this.checklist = ['Log In', 'Sign up', 'Demo User'];
+        this.checklist = ['Log In', 'Sign up'];
     }
 
   handleToggle(value){
@@ -65,8 +65,6 @@ class SplashList extends React.Component {
         return <Login />
       case 'Sign up':
         return <Signup />
-      case 'Demo User':
-        return <Demo />
       case '':
         return <Typography className={classes.smallTitle} variant="h5" gutterBottom>
           Pick a Todo Item to start!
